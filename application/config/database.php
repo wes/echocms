@@ -39,7 +39,7 @@ $active_record = TRUE;
 
 $db['default']['hostname'] = "localhost";
 $db['default']['username'] = "echocms";
-$db['default']['password'] = "z73qrdbFwjUDbHTP";
+$db['default']['password'] = "PASSGOESHERE";
 $db['default']['database'] = "echocms";
 $db['default']['dbdriver'] = "mysql";
 $db['default']['dbprefix'] = "";
