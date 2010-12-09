@@ -1,0 +1,32 @@
+body { margin: 10px; padding: 0; background: #eaeaea; }
+
+* { font-family: helvetica; }
+
+.clear { clear: both; }
+
+#form_h, #form_w { display: none; }
+
+div, h1, h2, h3, h4 { color: #343434; }
+
+#fileBrowser label { font-size: 11px; font-weight: bold; }
+
+#fileBrowser button, input[type=submit] { background: #cacaca; color: #343434; font-weight: bold; padding: 3px 7px 3px 7px; text-align: center; border-radius: 6px; -webkit-border-radius: 6px; -moz-border-radius: 6px; border: 0; }
+#fileBrowser button:hover, input[type=submit]:hover { background: #d90000; color: #ffffff; }
+
+#fileBrowser h1 { font-size: 22px; }
+
+#fileBrowser .loading { background: #ffffff; text-align: center; padding: 40px; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; }
+
+#fileBrowser #files .file { float: left; width 150px; height: 170px; padding: 5px; text-align: center; border: 3px solid #cccccc; margin: 10px; background: #ffffff; }
+#fileBrowser #files .file .caption { font-size: 11px; padding: 3px; width: 140px; overflow: hidden; font-weight: bold; }
+#fileBrowser #files .file:hover { border: 3px solid #00a8ff; }
+#fileBrowser #files .file img:hover { cursor: pointer; }
+#fileBrowser #files .file .tools button { font-size: 10px; font-weight: bold; padding: 2px 4px 2px 4px; color: #454545; background: #eaeaea; margin: 2px; }
+#fileBrowser #files .file .tools button:hover { background: #ff1e73; color: #ffffff; }
+#fileBrowser h1.top .close { float: right; width: 100px; text-align: right; }
+#fileBrowser h1.top .upload { float: right; width: 400px; text-align: left; }
+#fileBrowser select { font-size: 11px; }
+
+.thumb { float: right; width: 150px; }
+#editFrame label { display: block; padding: 2px; }
+#editFrame input { width: 200px; }

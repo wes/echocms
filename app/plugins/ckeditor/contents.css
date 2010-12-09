@@ -1,0 +1,10 @@
+body { background: #dfe9e6; }
+body, div, p, table, td, tr, a { font-family: arial; color: #333366; }
+h1 { font-size: 28px; font-weight: normal; margin: 0; padding: 0; }
+h2 { font-size: 16px; font-weight: bold; margin: 0; padding: 0; }
+h3 { font-size: 15px; font-weight: bold; margin: 0; padding: 0; }
+h4 { font-size: 14px; font-weight: bold; margin: 0; padding: 0; }
+h5 { font-size: 13px; font-weight: bold; margin: 0; padding: 0; }
+p { font-size: 12px; line-height: 150%; }
+.marker-white { background: #ffffff; }
+.marker-purple { background: #bcc3da; }

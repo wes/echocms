@@ -10,6 +10,7 @@
 |
 */
 	error_reporting(E_ALL);
+	ini_set('display_errors','On');
 
 /*
 |---------------------------------------------------------------
@@ -40,7 +41,7 @@
 | NO TRAILING SLASH!
 |
 */
-	$application_folder = "application";
+	$application_folder = "app";
 
 /*
 |===============================================================

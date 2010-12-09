@@ -1,0 +1,194 @@
+@charset "UTF-8";
+
+/** 
+ * Adobe CSS Drop-Down Menu Theme
+ *
+ * @file		default.css
+ * @name		Adobe
+ * @version		0.1
+ * @type		transitional
+ * @browsers	Windows: IE6+, Opera7+, Firefox1+
+ *				Mac OS: Safari2+, Firefox2+
+ *
+ * @link		http://www.lwis.net/
+ * @copyright	2008 Live Web Institute. All Rights Reserved.
+ *
+ * Module Classes: *.dir {} *.on {} *.open {} li.hover {} li.first {} li.last {}
+ * Expected directory tag - li
+ *
+ */
+
+@import "helper.css";
+
+
+
+/*------------------------------------------------------------------------------------------------------/
+ * @section		Base Drop-Down Styling
+ * @structure	ul (unordered list)
+ *				ul li (list item)
+ *				ul li a (links)
+ *				*(.class|:hover)
+ * @level sep	ul
+ */
+
+
+/* ----- ALL LEVELS (incl. first) */
+
+#nav ul.dropdown ul div.image { float: left; width: 150px; margin: 5px; }
+
+#nav { padding: 0 0 0 10px; }
+
+ul.dropdown {
+	font: bold 12px Arial, Helvetica, sans-serif;
+	text-align: left;
+}
+
+ul.dropdown {  }
+ul.dropdown li a { color: #343434; font-weight: bold; }
+
+	ul.dropdown li {
+	 padding: 7px 12px;
+	 color: #343434;
+	}
+
+	ul.dropdown li.hover,
+	ul.dropdown li:hover {
+
+	}
+
+	ul.dropdown a:link,
+	ul.dropdown a:visited { 
+		color: #cfdeda;
+		font-size: 14px;
+		text-decoration: none;
+		border-radius: 0;
+		-moz-border-radius: 0;
+		-webkit-border-radius: 0;		
+		border-top-left-radius: 10px;
+		-moz-border-radius-topleft: 10px;
+		-webkit-border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+		-moz-border-radius-topright: 10px;
+		-webkit-border-top-right-radius: 10px; 
+		margin-right: 2px;
+	}
+	ul.dropdown a:hover { background: #17172e; color: #ffffff; }
+	ul.dropdown a:active {  }
+
+	ul.dropdown a.open {
+	 background: #17172e;
+	 color: #ffffff !important;
+	}
+
+	ul.dropdown ul li.image { float: left; width: 150px; z-index: 500; padding: 15px; }
+	ul.dropdown ul li.first { margin-top: 10px; }
+	ul.dropdown ul li { padding: 4px 2px 0 2px; }
+	ul.dropdown ul li a:link, 
+	ul.dropdown ul li a:visited { display: block; color: #7b7bb2; padding: 5px; font-size: 12px; border-radius: 6px; -moz-border-radius: 6px; -webkit-border-radius: 6px; }
+	ul.dropdown ul li a:hover { color: #fffcf4; background: none; }
+
+	/* ----- END LEVEL */
+
+
+	/* ----- NON-FIRST LEVEL */
+
+	ul.dropdown ul {
+		width: 400px;
+		float: left;
+		padding: 0 0 10px 0;
+		background: #17172e;
+		border-radius: 0;
+		-moz-border-radius: 0;
+		-webkit-border-radius: 0;		
+		border-bottom-left-radius: 10px;
+		-moz-border-radius-bottomleft: 10px;
+		-webkit-border-bottom-left-radius: 10px;
+		border-top-right-radius: 10px;
+		-moz-border-radius-topright: 10px;
+		-webkit-border-top-right-radius: 10px;
+		border-bottom-right-radius: 10px;
+		-moz-border-radius-bottomright: 10px;
+		-webkit-border-bottom-right-radius: 10px; 
+	}
+
+		ul.dropdown ul li {
+		 background-color: transparent;
+		 color: #000;
+		}
+
+		ul.dropdown ul li.hover,
+		ul.dropdown ul li:hover {
+		 background-color: transparent;
+		}
+
+		ul.dropdown ul li.empty {
+		 padding: 12px 12px 7px !important;
+		 font-weight: bold;
+		}
+
+		ul.dropdown ul a:link,
+		ul.dropdown ul a:visited { color: #000; }
+		ul.dropdown ul a:hover { color: #000; text-decoration: none; }
+		ul.dropdown ul a:active { color: #000; }
+
+			ul.dropdown ul ul {
+			 	border-radius: 0;
+				-moz-border-radius: 0;
+				-webkit-border-radius: 0;
+				border-top-right-radius: 10px;
+				-moz-border-radius-topright: 10px;
+				-webkit-border-top-right-radius: 10px;
+				border-bottom-right-radius: 10px;
+				-moz-border-radius-bottomright: 10px;
+				-webkit-border-bottom-right-radius: 10px; 
+
+				border-bottom-left-radius: 10px;
+				-moz-border-radius-bottomleft: 10px;
+				-webkit-border-bottom-left-radius: 10px; 
+
+			}
+
+			ul.dropdown ul ul li {}
+
+/* ----- END LEVEL */
+
+
+
+/*------------------------------------------------------------------------------------------------------/
+ * @section	Support Class 'dir'
+ * @level sep	ul, .class
+ */
+
+
+/* ----- ALL LEVELS (incl. first) */
+
+ul.dropdown *.dir {
+ padding-right: 12px;
+ background-image: none;
+ background-position: 100% 50%;
+ background-repeat: no-repeat;
+}
+
+/* ----- END LEVEL */
+
+
+
+
+/* Components override */
+
+ul.dropdown-horizontal ul *.dir {
+ padding-right: 15px;
+ background-image: url(images/nav-arrow-right.png);
+ background-position: 100% 50%;
+ background-repeat: no-repeat;
+}
+
+ul.dropdown-vertical *.dir {
+ background-image: url(images/nav-arrow-right.png);
+}
+
+ul.dropdown-vertical-rtl *.dir {
+ padding-right: 15px;
+ background-image: url(images/nav-arrow-left.png);
+ background-position: 0 50%;
+}
