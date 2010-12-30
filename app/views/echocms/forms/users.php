@@ -29,7 +29,7 @@ $email = isset($form->email) ? $form->email : '';
 		</div>
 		<div class='field input'>
 			<?=form_label('Password','form[password]')?>
-			<?=form_input(array('name'=>'form[password]','size'=>18))?>&nbsp;<small>Leave password blank if you do not want to change it.</small>
+			<?=form_input(array('name'=>'form[password]','size'=>18,'type'=>'password'))?>&nbsp;<small>Leave password blank if you do not want to change it.</small>
 		</div>
 		<div class='field submit'>
 			<button type='submit' class='button'>Save User</button>

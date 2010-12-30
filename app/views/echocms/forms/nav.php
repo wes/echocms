@@ -1,12 +1,10 @@
 <?php
 $status_checked = isset($form->status_checked) && $form->status_checked == 'y' ? true : false;
+$parent_id = isset($form->parent_id) ? $form->parent_id : '';
 $name = isset($form->name) ? $form->name : '';
-$meta_title = isset($form->meta_title) ? $form->meta_title : '';
-$meta_keywords = isset($form->meta_keywords) ? $form->meta_keywords : '';
-$meta_description = isset($form->meta_description) ? $form->meta_description : '';
-$slug = isset($form->slug) ? $form->slug : '';
-$rank = isset($form->rank) ? $form->rank : '';
-$filename = isset($form->filename) ? $form->filename : '';
+$uri_type = isset($form->uri_type) ? $form->uri_type : '';
+$url = isset($form->url) ? $form->url : '';
+$page_id = isset($form->page_id) ? $form->page_id : '';
 ?>
 <div id='form_w'>650</div>
 <div id='form_h'>400</div>
@@ -25,51 +23,43 @@ $filename = isset($form->filename) ? $form->filename : '';
 			<div class='field input checkbox'>
 				<?=form_checkbox(array('name'=>'form[status]','id'=>'publishBtn'),'y',$status_checked,"onclick='publishToggle();'")?> Published
 			</div>
-			<div><button type='submit' class='button xs'>Save Page</button></div>
+			<div><button type='submit' class='button xs'>Save Nav</button></div>
 		</div>
 
 		<div class='field head'>
 			<?=form_label('Title','form[name]')?>
-			<?=form_input(array('name'=>'form[name]','class'=>'required page_title','id'=>'pageTitle'),$name,"onkeyup='autoPermalink();'")?> <input type='checkbox' id='autoPermaBuilder' checked />
+			<?=form_input(array('name'=>'form[name]','class'=>'required page_title','id'=>'pageTitle'),$name,"onkeyup='autoPermalink();'")?> <input type='hidden' id='autoPermaBuilder' checked />
 		</div>
 
 		<div class='field head'>
-			<?=form_label('Permalink','form[slug]')?>
-			<?=form_input(array('name'=>'form[slug]','value'=>$slug,'class'=>'required permalink','id'=>'permaLink','size'=>50))?> <button type='button' onclick="autoPermalink($('permaLink').value);">Convert</button>
+			<?=form_label('Parent','form[parent_id]')?>
+			<select name='form[parent_id]'>
+				<option value=''>-- Top Level --</option>
+				<?php foreach($parents as $p): ?>
+					<option value='<?=$p->id?>'<?=!empty($parent_id) && $p->id == $parent_id ? ' selected' : ''?>><?=$p->name?></option>
+				<?php endforeach; ?>
+			</select>
 		</div>
-
-	</fieldset>
-
-	<fieldset>
-		<legend>Meta Tags</legend>
 		<div class='field head'>
-			<?=form_label('Meta Title','form[meta_title]')?>
-			<?=form_input(array('name'=>'form[meta_title]','size'=>45,'value'=>$meta_title))?>
+			<?=form_label('Link Type','form[uri_type]')?>
+			<select name='form[uri_type]' id='uri_type_switch'>
+			<?php foreach($uri_types as $v): ?>
+				<option value='<?=$v?>'<?=!empty($uri_type) && $uri_type == $v ? ' selected' : ''?>><?=strtoupper($v)?></option>
+			<?php endforeach; ?>
+			</select>
 		</div>		
-		<div class='field head'>
-			<?=form_label('Meta Keywords','form[meta_keywords]')?>
-			<?=form_input(array('name'=>'form[meta_keywords]','size'=>45,'value'=>$meta_keywords))?>
+		<div class='field head' id='url_field'>
+			<?=form_label('URL','form[url]')?>
+			<?=form_input(array('name'=>'form[url]','size'=>45,'value'=>$url))?> <small>Use full http:// if linking to external sites.</small>
 		</div>		
-		<div class='field head'>
-			<?=form_label('Meta Description','form[meta_description]')?>
-			<?=form_input(array('name'=>'form[meta_description]','size'=>45,'value'=>$meta_description))?>
+		<div class='field head' id='page_field'>
+			<?=form_label('Page','form[page_id]')?>
+			<select name='form[page_id]'>
+			<?php foreach($pages as $p): ?>
+				<option value='<?=$p->id?>'<?=!empty($page_id) && $page_id == $p->id ? ' selected' : ''?>><?=$p->name?></option>
+			<?php endforeach; ?>
+			</select>
 		</div>		
-	</fieldset>
-
-	<fieldset>
-		<legend>Nav Image</legend>
-		<div class='field input'>
-			<?=form_label('File','nav_file')?>
-			<?=form_upload(array('name'=>'nav_file'))?>
-			<?php
-			if(!empty($filename)):
-				echo "
-				<div style='padding: 4px;font-size: 12px; font-weight: bold;'><a target='new' href='/uploads/nav/".$id."/".$filename."' />View Image</a></div>
-				<div style='padding: 4px;' class='delete_image'><input type='checkbox' name='delete_file' value='y' /> Delete Image?</div>
-				";
-			endif;
-			?>
-		</div>
 	</fieldset>
 
 	<div class='field submit'>
@@ -83,3 +73,22 @@ $filename = isset($form->filename) ? $form->filename : '';
 	</div>
 
 </form>
+
+<script type='text/javascript'>
+	function uri_type_switcher(){
+		var uri_type = $F('uri_type_switch');
+		if(uri_type == 'url'){
+			$('url_field').setStyle('display: block');
+			$('page_field').setStyle('display: none');
+		}else{
+			$('url_field').setStyle('display: none');
+			$('page_field').setStyle('display: block');
+		}
+	}
+	Event.observe(window,'load',function(){
+		uri_type_switcher();
+		$('uri_type_switch').observe('change',function(){
+			uri_type_switcher();
+		});
+	});
+</script>

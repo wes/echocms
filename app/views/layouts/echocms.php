@@ -12,7 +12,8 @@ $site_admin = $this->config->item('site_admin');
 	<title>Content Management System</title>
 	<meta name='description' content=''>
 	<meta name='keywords' content=''>
-	
+
+	<link rel="stylesheet" href="/app/assets/css/960.css" type="text/css" media="screen" charset="utf-8" />	
 	<link rel="stylesheet" href="/app/assets/css/backend/admin.css" type="text/css" media="screen" charset="utf-8" />
 	<link rel="stylesheet" href="/app/assets/css/backend/adminEditWindow.css" type="text/css" media="screen" charset="utf-8" />
 	<link rel="stylesheet" href="/app/assets/css/dropdown.css" type="text/css" media="screen" charset="utf-8" />
@@ -63,11 +64,18 @@ $site_admin = $this->config->item('site_admin');
 <?php $msg = $this->session->flashdata('msg'); ?>
 
 <?php if(!empty($msg['title'])): ?>
-	<div class='msg <?=isset($msg['class'])?$msg['class']:'good'?>'><h1><?=$msg['title']?></h1><?=isset($msg['desc'])?'<p>'.$msg['desc'].'</p>':''?></div>
+	<div id='msg_top' class='msg <?=isset($msg['class'])?$msg['class']:'good'?>'><h1><?=$msg['title']?></h1><?=isset($msg['desc'])?'<p>'.$msg['desc'].'</p>':''?></div>
+	<script type='text/javascript'>
+		setTimeout(function(){
+			$('msg_top').fade();
+		},1500);
+	</script>
 <?php endif; ?>
 
 <div id='top'>
 
+	<div class='top-line'><?=$this->config->item('site_title')?></div>
+	
 	<div id='login_info'>
 		<span class='welcome'>Welcome</span> <b><?=$_SESSION['login']['user_full_name']?></b> <span class='divider'>|</span> <a href='/<?=$site_admin?>/logout'>Logout</a> <span class='divider'>|</span> <a href="javascript: editWindow.load_url('/<?=$site_admin?>/help');">Help!</a>
 	</div>

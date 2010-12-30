@@ -1,0 +1,12 @@
+body { padding: 0; margin: 0; }
+
+.clear { clear: both;}
+
+#main { }
+
+#top {  }
+#top .wrap {  }
+#top .wrap .logo {  }
+
+#top .wrap #nav { background: red; color: #ffffff; }
+#top .wrap #nav a { color: #ffffff; }

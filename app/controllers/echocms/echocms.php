@@ -75,7 +75,6 @@ class Echocms extends Controller {
 			if($field == 'featured' && empty($f[$field])): $f[$field] = 'n'; endif;
 			if($field == 'non_member' && empty($f[$field])): $f[$field] = 'n'; endif;
 			if($field == 'password' && !empty($f[$field])): $f[$field] = md5($f[$field]); endif;
-			if($field == 'password' && !empty($f[$field])): $f[$field] = md5($f[$field]); endif;
 			if(empty($f[$field])): $f[$field] = ''; endif;
 			$fields[$field] = $f[$field];
 			if($field == 'password' && empty($fields[$field])): unset($fields[$field]); endif;
@@ -95,6 +94,14 @@ class Echocms extends Controller {
 
 		header('Location: /'.$this->site_admin.'/'.$this->tbl_name.'/');
 		
+	}
+	
+	public function save_order(){
+		foreach($_POST['sortinglist'] as $k => $v):
+			$this->db->set('rank', $k);
+			$this->db->where('id', $v);
+			$this->db->update($this->tbl_name);
+		endforeach;
 	}
 	
 	function before_save(){}
@@ -157,7 +164,11 @@ class Echocms extends Controller {
 			$data['viewOnly'] = true;
 		endif;
 
-		$list_file = 'echocms/list';
+		$list_file = 'echocms/listTbl';
+
+		if(isset($this->listDiv)):
+			$list_file = 'echocms/listDiv';
+		endif;
 
 		if($this->list_tree == true):
 			$list_file = 'echocms/list_tree';
@@ -168,7 +179,10 @@ class Echocms extends Controller {
 		$data['top'] = $this->top;
 		$data['searchQ'] = $this->input->post('searchQ');
 		$data['totalRecords'] = count($list);
-
+		if(isset($this->showSort)):
+			$data['showSort'] = $this->showSort;
+		endif;
+		
 		$this->layout->view($list_file,$data);
 		
 	}

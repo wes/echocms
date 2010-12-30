@@ -57,6 +57,7 @@ a:hover { color: #ffffff; }
 	border-bottom-right-radius: 10px;
 	-moz-border-radius-bottomright: 10px;
 	-webkit-border-bottom-right-radius: 10px; 
+	z-index: 9999;
  }
 .msg h1 { font-size: 12px; margin: 0; padding: 0; background: none; }
 .msg p { font-weight: normal; font-size: 11px; margin: 0; padding: 5px 0 0 0; }
@@ -64,10 +65,10 @@ a:hover { color: #ffffff; }
 .msg.bad { background: #cf001d; color: #ffffff; }
 
 #main { margin: 0; padding: 0; text-align: left; }
-#main .page { margin: 20px auto 0 auto; padding: 0 0 30px 0; width: 900px; background: #ffffff; }
+#main .page { margin: 20px auto 0 auto; padding: 0 0 30px 0; width: 960px; background: #ffffff; }
 #main .page p { font-size: 13px; line-height: 170%; padding: 15px; }
 
-input, select, textarea { border: 2px solid #cacaca; padding: 3px; font-size: 15px; color: #000000; background: #ffffff; }
+input, select, textarea { padding: 3px; font-size: 15px; color: #000000; background: #ffffff; }
 select { border: 0; }
 input[type=file] { border: 0; }
 
@@ -117,13 +118,15 @@ table.listTable td.actions a { color: #565656; padding: 4px; text-decoration: no
 table.listTable td.actions a:hover { background: #0083de; color: #ffffff; }
 table.listTable { border-collapse: collapse; }
 table.listTable thead, table.listTable tfoot { background-color: #DDD; }
-table.listTable tr.topLevel.rowodd, table.listTable tr.topLevel.roweven { background-color: #fafafa; }
+table.listTable tr.topLevel.rowodd, table.listTable tr.topLevel.roweven { background: #fafafa; }
 table.listTable tr.topLevel td { font-size: 14px; }
 table.listTable tr.secLevel td { font-size: 11px; }
 table.listTable tr.topLevel td.actions, table.listTable tr.secLevel td.actions { font-size: 12px; }
 
+table.listTable tr.sub td { color: #454545; }
+
 table.listTable tr.rowodd { }
-table.listTable tr.roweven { background-color: #eaeaea; }
+table.listTable tr.roweven { }
 table.listTable tr:hover { background: #ffffff; }
 table.listTable .sortcol { cursor: pointer; padding-right: 20px; background: #fafafa; coor: #000000; }
 table.listTable .sortasc { background: #cccccc url(../app/assets/gfx/icons/up.gif) no-repeat right center; }
@@ -134,7 +137,7 @@ table.listTable .sortdesc { background: #cccccc url(../app/assets/gfx/icons/down
 fieldset { border: 0; }
 
 .generic-form { padding: 10px 0 10px 0; }
-.generic-form input[type=text], .generic-form textarea { border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; }
+.generic-form input[type=text], .generic-form textarea {  }
 .generic-form .published { float: right; width: 150px; padding: 5px; background: #fafafa; border: 1px solid #cacaca; font-weight: bold; font-size: 12px; border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; }
 .generic-form .published.on { background: #39b54a; color: #ffffff; }
 .generic-form .published input[type=submit] { background: #fafafa; border: 1px solid #cccccc; color: #565656; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; font-size: 10px; font-weight: bold; }
@@ -191,11 +194,11 @@ fieldset { border: 0; }
 }
 
 .field.success input {
-    border: 2px solid #00d900;
+
 }
 
 .field.error input {
-    border: 2px solid #d90000;
+	
 }
 
 .note { background: #fffce6; font-size: 10px; padding: 10px; border: 1px solid #dbd7b1; color: #969378; margin: 10px; float: right; width: 250px; line-height: 150%; }
@@ -677,5 +680,17 @@ button.button:hover {
 }
 /* END OF BUTTONS */
 
+.move_icon { width: 22px; height: 22px; background: url(/app/assets/gfx/move.gif) no-repeat; }
+.move_icon:hover { cursor: move; }
 
+.divTable { }
+.divTable .row { padding: 10px 0 10px 0; border-bottom: 1px solid #cccccc; margin: 0; background: #ffffff;}
+.divTable .head { background: #eaeaea; font-weight: bold; font-size: 13px; padding: 10px 0 10px 0; }
+.divTable .subs { background: #eaeaea; padding: 5px; margin: 0 0 10px 0; }
+.divTable .subs table.listTable td { font-weight: normal; }
+.divTable .subs .row { padding: 5px; }
+.divTable .actions { text-align: right; }
+.divTable .actions a { background: #fafafa; border: 1px solid #cccccc; padding: 4px 6px 4px 6px; font-size: 11px; font-weight: bold; border-radius: 8px; -moz-border-radius: 8px; -webkit-border-radius: 8px; color: #787878; text-decoration: none; }
+.divTable .actions a:hover { background: #e10074; border: 1px solid #e10074; cursor: pointer; color: #ffffff; }
 
+.top-line { position: absolute; left: 10px; top: 10px; font-size: 23px; font-weight: bold; }

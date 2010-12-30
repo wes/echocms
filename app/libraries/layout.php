@@ -34,7 +34,11 @@ class Layout {
 		if(isset($this->obj->testimonials)):
 			$loadedData['quote'] = $this->obj->testimonials->get_random();
 		endif;
+
 		$loadedData['current_url'] = current_url();
+		
+		$loadedData['menu'] = $this->obj->navigation->get_menu();
+		
 		if($return):
 			$output = $this->obj->load->view('layouts/'.$this->layout, $loadedData, true);
 			return $output;

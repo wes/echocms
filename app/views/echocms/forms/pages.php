@@ -70,23 +70,6 @@ $updated = date('Y-m-d H:i:s');
 		
 		<fieldset>
 			<legend>Attributes</legend>
-			<div class='field input left'>
-				<?=form_label('Navigation','form[nav_id]')?>
-				<?=form_dropdown('form[nav_id]',$navs,$nav_id,"id='nav_id' onchange='getPageParents();' class='required'")?>
-			</div>
-			<div class='field input left'>
-				<?=form_label('Page Parent','form[parent_id]')?>
-				<span id='pageParents'>
-					<?=form_dropdown('form[parent_id]',$parents,$parent_id)?>
-				</span>
-			</div>
-			<div class='field input left'>
-				<?=form_label('Rank','form[rank]')?>
-				<?=form_input(array('name'=>'form[rank]','size'=>5,'value'=>$rank))?>
-			</div>
-			
-			<div class='clear'></div>
-			
 			<div class='field input'>
 				<?=form_label('Image File','page_file')?>
 				<?=form_upload(array('name'=>'page_file'))?>
