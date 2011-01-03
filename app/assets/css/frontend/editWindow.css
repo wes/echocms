@@ -1,0 +1,62 @@
+#editWindow {
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background: #000000;
+	text-align: center;
+	z-index: 1300;
+}
+
+#editWrap {
+	position: absolute;
+	margin: 0;
+	background: #ffffff;
+	border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px;
+	padding: 15px;
+	z-index: 1301;
+}
+
+#editFrame {
+	color: #000000;
+	text-align: left;
+	overflow: auto;
+	padding: 0;
+	z-index: 1302;
+}
+
+#editFrame .pad { padding: 10px; }
+#editFrame {  }
+#editFrame .loading { text-align: center; padding: 20px; }
+#editWrap h1, #editWrap h2, #editWrap h3, #editWrap h4, #editWrap h5 { color: #383838; border: 0; padding: 0 5px 0 0; background: none; }
+#editWrap h1 { font-size: 24px; }
+#editWrap .field { padding: 8px 0 8px 0px; }
+#editWrap button, #editWrap input[type=submit] { background: #dadada; color: #232323; font-weight: bold; border: 0; font-size: 18px; font-weight: bold; padding: 8px 40px 8px 40px; text-transform: uppercase; border-radius: 8px; -webkit-border-radius: 8px; -moz-border-radius: 8px; }
+#editWrap button.sm { font-size: 12px; padding: 3px 7px 3px 7px; }
+#editWrap button:hover, #editWrap input[type=submit]:hover { background: #c70000; color: #ffffff; cursor: pointer; }
+#editWrap h1 .close, #editWrap h1 .save { padding: 4px 8px 4px 8px; text-decoration: none; margin: 0 4px 0 0; float: right; background: #cacaca; color: #323232; width: 50px; text-align: center; font-size: 10px; font-weight: bold; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; }
+#editWrap h1 .save { width: 70px; background: #d90000; color: #ffffff; }
+#editWrap h1 .close:hover { background: #d90000; color: #ffffff; }
+#editWrap h1 .save:hover { background: #a70000; }
+#editWrap h1 .field.checkbox { float: left; width: 250px; }
+#editWrap h1 .title { float: left; width: 250px; }
+#editWrap select { font-size: 12px; }
+#editWrap input { font-size: 12px; }
+#editWrap input.page_title { font-size: 18px; padding: 3px; font-weight: bold; font-family: helvetica; width: 95%; }
+#editWrap input.permalink { font-size: 11px; padding: 2px; font-weight: bold; font-family: helvetica; width: 300px; border: 1px solid #cccccc; }
+#editWrap .checkbox { font-size: 11px; font-weight: bold; }
+#editWrap textarea { width: 100%; font-size: 12px; }
+#editWrap label { font-size: 11px; font-weight: bold; }
+#editWrap .field.input label { float: left; width: 80px; text-align: right; padding: 9px 4px 0 0; }
+#editWrap .field.head label { display: block; width: 100%; padding: 3px; }
+#editWrap fieldset { background: #fafafa; border: 1px solid #cacaca; margin: 4px 0 4px 0; }
+#editWrap fieldset legend { font-size: 12px; font-weight: bold; color: #54534d; }
+#editWrap small { font-size: 10px; }
+#editWrap .right-col { float: right; width: 300px; margin: 0px; text-align: left; }
+#editWrap .right-col fieldset { margin: 0 0 20px; text-align: left; padding: 3px; }
+#editWrap .right-col fieldset .field { padding: 2px; font-size: 11px; font-weight: bold;  }
+#editWrap .right-col fieldset .field.input label { display: block; float: none; padding: 2px; text-align: left; }
+#editWrap .left-col { float: left; width: 500px; margin: 0px; text-align: left; }
+#editWrap .right-col.member-cats label { display: block; padding: 2px; }
+#editWrap .delete_image { font-size: 10px; }

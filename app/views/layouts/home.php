@@ -8,10 +8,7 @@
 	<meta name='description' content='<?=!empty($meta_description) ? $meta_description : ''?>' />
 	<meta name='keywords' content='<?=!empty($meta_keywords) ? $meta_keywords : ''?>' />
 	
-	<link rel="stylesheet" href="/app/assets/css/frontend/home.css" type="text/css" media="screen" charset="utf-8" />
-	<link rel="stylesheet" href="/app/assets/css/dropdown.css" type="text/css" media="screen" charset="utf-8" />
-	<link rel="stylesheet" href="/app/assets/css/menu.css" type="text/css" media="screen" charset="utf-8" />
-	<link rel="stylesheet" href="/app/assets/css/editWindow.css" type="text/css" media="screen" charset="utf-8" />
+	<link rel="stylesheet" href="/app/assets/css/frontend/styles.css" type="text/css" media="screen" charset="utf-8" />
 	
 	<!--[if IE 6]>
 	<link rel='stylesheet' href='/app/assets/css/ie6.css' type='text/css' media='screen' />

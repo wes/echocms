@@ -1,0 +1,36 @@
+@import url('../960.css');
+@import url('../dropdown.css');
+@import url('./editWindow.css');
+
+* html ul.dropdown ul { background-image: url(images/dropdown_pane_8bit.png); }
+
+body { padding: 0; margin: 0; background: #cccccc; text-align: left; }
+
+div, p, td { font-family: helvetica; }
+
+.clear { clear: both; }
+
+#main { margin: 0 auto 0 auto; background: #eaeaea; width: 900px; text-align: left; }
+
+#top { background: #cacaca; }
+#top .wrap {  }
+#top .wrap .logo {  }
+
+#top .wrap #nav-wrap { background: #212121; display: block; padding: 10px; color: #ffffff; }
+#top .wrap #nav-wrap #nav { clear: both; }
+#top .wrap #nav-wrap #nav a { color: #ffffff; font-size: 13px; font-weight: bold; display: inline-block; padding: 5px; }
+
+#content { padding: 25px; }
+#sub_footer { padding: 10px; }
+#sub_footer .inner { }
+
+.sub-item {  }
+
+ul.dropdown {  }
+ul.dropdown li { padding: 5px 12px 5px 12px; display: block; }
+ul.dropdown li a { text-decoration: none; }
+ul.dropdown li:hover ul { display: block; }
+ul.dropdown li ul { background: #010101; width: 200px; }
+ul.dropdown li ul li {  }
+ul.dropdown li ul li:hover { background: #d90000; }
+ul.dropdown li ul li a {  }
